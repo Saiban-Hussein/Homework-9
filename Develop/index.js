@@ -60,9 +60,7 @@ inquirer
     .prompt(questions)
     .then(function(data){
         const queryUrl = `https://api.github.com/users/${data.username}`;
-
-        axios.get(queryUrl).then(function(res) {
-            
+        axios.get(queryUrl).then(function(res) {    
             const githubInfo = {
                 githubImage: res.data.avatar_url,
                 email: res.data.email,
@@ -81,8 +79,3 @@ inquirer
 
 });
 
-function init() {
-
-}
-
-init();
